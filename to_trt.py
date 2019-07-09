@@ -19,9 +19,9 @@ with tf.Session() as sess:
     #       names.append(t.name)
     #    print(names)
     output_names = [
-        "prefix/ident_boxes/Identity:0",
-        "prefix/ident_scores/Identity:0",
-        "prefix/ident_labels/Identity:0",
+        "ident_boxes/Identity",
+        "ident_scores/Identity",
+        "ident_labels/Identity",
     ]
     trt_graph = trt.create_inference_graph(
         input_graph_def=graph_def,
