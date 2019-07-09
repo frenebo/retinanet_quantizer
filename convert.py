@@ -61,7 +61,7 @@ def freeze_session(session, keep_var_names=None, output_names=None, clear_device
         return frozen_graph
 
 
-
+print("Output names: ", [out.op.name for out in final_model.outputs])
 frozen_graph = freeze_session(K.get_session(),
                               output_names=[out.op.name for out in final_model.outputs])
 
