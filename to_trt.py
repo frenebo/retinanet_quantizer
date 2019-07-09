@@ -1,12 +1,11 @@
 import tensorflow.contrib.tensorrt as trt
 
 import tensorflow as tf
-from tensorflow.python.platform import gfile
 GRAPH_PB_PATH = './model/tf_model.pb'
 
 with tf.Session() as sess:
     print("load graph")
-    with gfile.FastGFile(GRAPH_PB_PATH,'rb') as f:
+    with tf.gfile.GFile(GRAPH_PB_PATH,'rb') as f:
         graph_def = tf.GraphDef()
         graph_def.ParseFromString(f.read())
     sess.graph.as_default()
