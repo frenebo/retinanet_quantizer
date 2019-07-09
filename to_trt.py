@@ -2,6 +2,7 @@ import tensorflow.contrib.tensorrt as trt
 
 import tensorflow as tf
 from load_graph import load_graph_def
+from tensorflow.python.framework import graph_io
 
 GRAPH_PB_PATH = './model/tf_model.pb'
 
