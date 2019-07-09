@@ -16,6 +16,11 @@ with tf.Session() as sess:
     #    for t in graph_nodes:
     #       names.append(t.name)
     #    print(names)
+    output_names = [
+        "prefix/ident_boxes/Identity",
+        "prefix/ident_scores/Identity",
+        "prefix/ident_labels/Identity",
+    ]
     trt_graph = trt.create_inference_graph(
         input_graph_def=graph_def,
         outputs=output_names,
