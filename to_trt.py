@@ -1,15 +1,18 @@
 import tensorflow.contrib.tensorrt as trt
 
 import tensorflow as tf
+from .load_graph import load_graph_def
+
 GRAPH_PB_PATH = './model/tf_model.pb'
 
 with tf.Session() as sess:
-    print("load graph")
-    with tf.gfile.GFile(GRAPH_PB_PATH,'rb') as f:
-        graph_def = tf.GraphDef()
-        graph_def.ParseFromString(f.read())
-    sess.graph.as_default()
-    tf.import_graph_def(graph_def, name='')
+    graph_def = load_graph_def(GRAPH_PB_PATH)
+    # print("load graph")
+    # with tf.gfile.GFile(GRAPH_PB_PATH,'rb') as f:
+    #     graph_def = tf.GraphDef()
+    #     graph_def.ParseFromString(f.read())
+    # sess.graph.as_default()
+    # tf.import_graph_def(graph_def, name='')
     #    graph_nodes=[n for n in graph_def.node]
     #    names = []
     #    for t in graph_nodes:
