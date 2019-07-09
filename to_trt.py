@@ -1,7 +1,7 @@
 import tensorflow.contrib.tensorrt as trt
 
 import tensorflow as tf
-from .load_graph import load_graph_def
+from load_graph import load_graph_def
 
 GRAPH_PB_PATH = './model/tf_model.pb'
 

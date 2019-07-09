@@ -1,5 +1,5 @@
 import tensorflow as tf
-from .load_graph import load_graph
+from load_graph import load_graph
 
 # We use our "load_graph" function
 graph = load_graph("./model/tf_model.pb")
