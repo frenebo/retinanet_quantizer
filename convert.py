@@ -57,11 +57,11 @@ def freeze_session(session, keep_var_names=None, output_names=None, clear_device
             for node in input_graph_def.node:
                 node.device = ""
 
-        for op in graph.get_operations():
-            # print("Op:")
-            print(op.name)
+        # for op in graph.get_operations():
+        #     # print("Op:")
+        #     print(op.name)
 
-        graph.get_tensor_by_name("prefix/input_1:0").set_shape([1, 224, 224, 3])
+        graph.get_tensor_by_name("input_1:0").set_shape([1, 224, 224, 3])
 
         frozen_graph = convert_variables_to_constants(session, input_graph_def,
                                                       output_names, freeze_var_names)
