@@ -30,7 +30,7 @@ with tf.Session() as sess:
         max_batch_size=1,
         max_workspace_size_bytes=1 << 25,
         precision_mode='INT8',
-        is_dynamic_op=True,
+        is_dynamic_op=False,
         minimum_segment_size=5
     )
 
