@@ -30,7 +30,7 @@ with tf.Session() as sess:
         max_batch_size=1,
         max_workspace_size_bytes=1 << 25,
         precision_mode='FP16',
-        minimum_segment_size=50
+        minimum_segment_size=5
     )
 
     graph_io.write_graph(trt_graph, "./model/",
